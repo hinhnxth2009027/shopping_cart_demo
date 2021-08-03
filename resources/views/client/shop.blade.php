@@ -53,6 +53,22 @@
         </div>
     </div>
     </div>
+    @if(session('err_order'))
+        <div id="toast-container" class="toast-top-right">
+            <div class="toast toast-error" aria-live="polite" style="display: block;">
+                <button type="button" class="toast-close-button" role="button">×</button>
+                <div class="toast-message">{{session('err_order')}}</div>
+            </div>
+        </div>
+    @endif
+    @if(session('success_order'))
+        <div id="toast-container" class="toast-top-right">
+            <div class="toast toast-success" aria-live="polite" style="display: block;">
+                <button type="button" class="toast-close-button" role="button">×</button>
+                <div class="toast-message">{{session('success_order')}}</div>
+            </div>
+        </div>
+    @endif
 </section>
 @csrf
 <!-- FOOTER =============================-->

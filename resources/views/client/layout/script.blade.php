@@ -58,6 +58,7 @@
             if (response.code === 200) {
                 toastr.success(`Update #${id} success`);
                 $(`.price${id}`).text('$' + Number($(`.${id}`).val()) * Number(response.price))
+                $('.total_price').text("$"+response.total_price)
             } else if (response.code === 401) {
                 toastr.error(`Only ${response.quantity_product} products left`);
             } else {
@@ -77,9 +78,16 @@
                     $(`#cart_item${id}`).remove()
                     $('.count_items').text(response.product_count)
                     toastr.info(response.message);
+                    $('.total_price').text("$"+response.total_price)
                 }
             });
         }
 
     })
+
+    $('.toast-close-button').click(function (){
+        $('#toast-container').remove()
+    })
+
 </script>
+

@@ -56,11 +56,17 @@ class CartController extends Controller
         }
         $shoppingCart[$id] = $cartItem;
         Session::put('shoppingCart', $shoppingCart);
+        $total_price = 0;
+        foreach (Session::get('shoppingCart') as $item){
+            $total_price+= $item->price * $item->quantity;
+        }
+
         return response()->json([
             'code' => 200,
             'message' => 'add to cart success !',
             'product_count' => sizeof(Session::get('shoppingCart')),
-            'price' => $product->price
+            'price' => $product->price,
+            'total_price'=>$total_price
         ]);
     }
 
@@ -72,8 +78,15 @@ class CartController extends Controller
             $product_count = sizeof(Session::get('shoppingCart'));
             $list = array_reverse(Session::get('shoppingCart'));
         }
+        $total_price = 0;
+        if (!Session::has('shoppingCart')){
+            Session::put('shoppingCart',[]);
+        }
 
-        return view('client.shopping_cart', ['list' => $list, 'product_count' => $product_count]);
+        foreach (Session::get('shoppingCart') as $item){
+            $total_price+= $item->price * $item->quantity;
+        }
+        return view('client.shopping_cart', ['list' => $list, 'product_count' => $product_count,'total_price'=>$total_price]);
     }
 
 
@@ -88,12 +101,18 @@ class CartController extends Controller
         if (Session::has('shoppingCart')) {
             $product_count = sizeof(Session::get('shoppingCart'));
         }
+        $total_price = 0;
+        foreach (Session::get('shoppingCart') as $item){
+            $total_price+= $item->price * $item->quantity;
+        }
         return response()->json([
             'code'=>200,
             'message'=>'delete product success',
             'product_count' => sizeof(Session::get('shoppingCart')),
+            'total_price'=>$total_price
         ]);
     }
+
 
 
 }

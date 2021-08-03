@@ -12,6 +12,7 @@
 {{--                <li class="propClone"><a href="index.html">Home</a></li>--}}
                 <li class="propClone"><a href="{{route('show_all_product')}}">Shop</a></li>
 {{--                <li class="propClone"><a href="product.html">Product</a></li>--}}
+                <li class="propClone"><a href="{{route('show_order')}}">Order</a></li>
 {{--                <li class="propClone"><a href="checkout.html">Checkout</a></li>--}}
 {{--                <li class="propClone"><a href="contact.html">Contact</a></li>--}}
                 <li class="propClone item_shopping_cart"><a href="{{route('show_shopping_cart')}}" class="go_to_shopping_cart" >Shopping cart <i class="fa fa-shopping-cart"></i> <span class="count_items">{{$product_count}}</span></a></li>

@@ -86,7 +86,6 @@ class ProductsSeeder extends Seeder
             "Chân váy chữ a trơn",
             "Đồ nam thanh lịch");
         $fake = Factory::create();
-        DB::table('products')->truncate();
         for ($i = 0; $i < 201; $i++) {
             Product::create([
                 'id' => random_int(1000, 9999) . random_int(10000, 99999),
