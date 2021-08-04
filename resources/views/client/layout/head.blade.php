@@ -2,6 +2,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="">
+    <link rel="icon" type="image/png" href="{{url('https://beedesign.com.vn/wp-content/uploads/2020/08/tao-logo-shop-quan-ao-ny.jpg')}}"/>
+    <link rel="icon" type="image/png" href="{{url('https://beedesign.com.vn/wp-content/uploads/2020/08/tao-logo-shop-quan-ao-ny.jpg')}}"/>
     <link href="{{url('libs/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{url('https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css')}}" rel="stylesheet">
     <link href="{{url('libs/css/style.css')}}" rel="stylesheet">
